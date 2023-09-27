@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+  background: #272822;
+  color: #eee;
+}
+
+.degradados {
+  width: 550px;
+  height: 300px;
+  border: 2px solid #ccc;
+  margin: 2em auto;
+  /*background: linear-gradient(
+                              90deg,
+                              red 33.33%,
+                              red 33.33%,
+                              white 33.33%,
+                              white 66.66%,
+                              red 66.6%);*/
+  background: -webkit-gradient(linear, left top, right top, color-stop(33.33%, #086846), color-stop(33.33%, #086846), color-stop(33.33%, white), color-stop(66.66%, white), color-stop(66.6%, #CD0028));
+  background: linear-gradient(90deg, #086846 33.33%, #086846 33.33%, white 33.33%, white 66.66%, #CD0028 66.6%);
+}

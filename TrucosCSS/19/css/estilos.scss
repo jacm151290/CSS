@@ -1,0 +1,60 @@
+
+$color_fondo: #111619;
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: $color_fondo;
+}
+
+h1{
+    color: yellow;
+    text-align: center;
+}
+
+.esquinas{
+    $color_border: purple;
+
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0 0 8px $color_fondo inset,
+                0 0 0 10px $color_border inset;
+    background: url(https://ichef.bbci.co.uk/images/ic/1200x675/p0b7wrjm.jpg);
+    background-size: cover;
+    margin: 2em auto;
+    position: relative;
+    &:after{
+        content: "";
+        width: 508px;
+        height: 308px;
+        position: absolute;
+        z-index: -1;
+        top: -4px;
+        left: -4px;
+        //background: $color_border;
+        background-image: 
+                        linear-gradient(
+                            to left,
+                            transparent 30px,
+                            $color_fondo 30px,
+                            $color_fondo 478px,
+                            transparent 478px,
+                        ),
+                        linear-gradient(
+                            $color_border 30px,
+                            transparent 30px,
+                            transparent 278px,
+                            $color_border 278px
+                        );
+                        ;/*
+        background-image: 
+                        linear-gradient(
+                            $color_border 30px,
+                            transparent 30px,
+                            transparent 278px,
+                            $color_border 278px
+                        );*/
+        
+
+    }
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Shadows+Into+Light+Two&display=swap');
+
+$color_lineas: #e0b8b8;
+$color_fondo: #fef1c3;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #222;
+}
+
+.paper{
+    width: 400px;
+    height: 500px;
+    margin: 2em auto;
+    background-image: 
+                    linear-gradient(
+                        lighten(#FEE590,10) 98%,
+                        desaturate(lighten(red,30),60) 98%    
+                    );
+    background-size: auto 40px;
+    background-position: 0 1em;
+    padding: 1em;
+    //font-family: 'Roboto', sans-serif;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 1.5em;
+
+    h1{
+        margin: 0;
+        line-height: 80px;
+        color: darkred;
+    }
+
+    p,li{
+        line-height: 40px;
+        margin: 0;
+    }
+
+    ul{
+        margin: 0;
+        list-style: none;
+        
+        li{
+            position: relative;
+
+            &:before{
+                content: "\2713";
+                color: green;
+                margin-right: .5em;
+                position: absolute;
+                left: -1.2em;
+            }
+
+        }
+
+    }
+}

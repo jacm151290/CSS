@@ -1,0 +1,40 @@
+body{
+    background: lightblue;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.page{
+    width: 80%;
+    margin: 2em auto;
+}
+
+.boton{
+    display: inline-block;
+    background: linear-gradient(green,darken(green,10));
+    box-sizing: border-box;
+    border: 1px solid darken(green,10);
+    border-bottom-width: 4px;
+    box-shadow: 0 0 0 1px rgba(#fff,.2) inset;
+    color: #fff;
+    line-height: 3em;
+    height: 3em;
+    padding: 0 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: .3em;
+    text-shadow: 0 -1px rgba(#000,.5);
+    font-size: 1em;
+    &:hover{
+        background: darken(green,5);
+    }
+
+    &:active{
+        //border-bottom-width: 1px;
+        //line-height: 3em;
+        transform: scale(.95);
+    }
+}
+
+

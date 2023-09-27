@@ -1,0 +1,56 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background: seagreen;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+.item{
+    background: darken(seagreen,15);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 50px;
+    margin: 1em;
+    overflow: hidden;
+    padding: 0 2em;
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: gold;
+        transition: all .3s;
+    }
+    &:hover:after{
+        width: 100%;
+    }
+}
+
+.uno:after{
+    left: 0;
+}
+.dos:after{
+    right: 0;
+}
+.tres{
+    &:after{
+        left: 50%;
+    }
+    &:hover:after{
+        left: 0;
+    }
+}

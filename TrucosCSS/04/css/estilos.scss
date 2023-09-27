@@ -1,0 +1,27 @@
+@function longShadow($numero,$color){
+    $text-shadow: 1px 1px $color;
+
+    @for $i from 1 through $numero{
+        $text-shadow: #{$text-shadow}, 
+                        #{$i}px #{$i}px #{$color};
+    }
+
+    @return $text-shadow;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Oswald;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: darken(magenta, 25%);
+}
+
+.icon-twitter{
+    font-size: 20em;
+    color: darken(magenta, 30%);
+    text-shadow: longShadow(1000,darken(magenta, 40%));
+}

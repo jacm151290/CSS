@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: radial-gradient(
+        closest-side circle,
+        #222, #000
+    );
+    display: flex;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    color: #eee;
+    position: absolute;
+    width: 100%;
+}
+
+.yin-yang{
+    $size: 400px;
+    $color1: black;
+    $color2: white;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 0 0 40px 10px rgba(#fff,.2);
+    background: 
+        radial-gradient(
+            $size / 8 circle at 50% 25%,
+            $color1 50%,
+            transparent 50%
+        ),
+        radial-gradient(
+            $size / 8 circle at 50% 75%,
+            $color2 50%,
+            transparent 50%
+        ),
+        radial-gradient(
+            $size / 2 circle at 50% 25%,
+            $color2 50%,
+            transparent 50%
+
+        ),
+        radial-gradient(
+            $size / 2 circle at 50% 75%,
+            $color1 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            90deg,
+            $color2 50%,
+            transparent 50%
+        ),
+        linear-gradient(
+            -90deg,
+            $color1 50%,
+            transparent 50%
+        );
+    animation: girar 3s linear infinite;
+}
+
+@keyframes girar{
+    to {
+        transform: rotate(360deg);
+    }
+}

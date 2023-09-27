@@ -1,0 +1,25 @@
+@import url(http://fonts.googleapis.com/css?family=Luckiest+Guy);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Luckiest Guy";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background: steelblue;
+}
+
+.text3d {
+  font-size: 5em;
+  color: #eee;
+  text-shadow: 1px 1px black, 1px 1px #222, 2px 2px #222, 3px 3px #222, 4px 4px #222, 5px 5px #222, 6px 6px #222, 7px 7px #222, 8px 8px #222, 9px 9px #222, 10px 10px #222, 11px 11px #222, 12px 12px #222, 13px 13px #222, 14px 14px #222, 15px 15px #222;
+  -webkit-transform: rotate(-6deg);
+          transform: rotate(-6deg);
+}

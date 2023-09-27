@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #272822;
+}
+
+h1 {
+  text-align: center;
+  color: #8db3d3;
+}
+
+.gear {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1em dashed #eee;
+  background: radial-gradient(transparent 10%, #eee 10%) padding-box;
+  margin: auto;
+  -webkit-animation: girar 5s linear infinite;
+          animation: girar 5s linear infinite;
+}
+
+@-webkit-keyframes girar {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes girar {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,37 @@
+@function longShadow($numero,$color){
+    $box-shadow: 1px 1px $color;
+
+    @for $i from 1 through $numero{
+        $box-shadow: #{$box-shadow}, 
+                        #{$i}px #{$i}px #{$color};
+    }
+
+    @return $box-shadow;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Oswald;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: darken($color: tomato, $amount: 5%);
+}
+
+.long-shadow{
+    border-radius: 15%;
+    border: solid 1px #AE3827;
+    width: 200px;
+    height: 200px;
+    background: rgba(#000, .3);
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(#fff,.3);
+    box-shadow: longShadow(1000,darken(#AE3827,10%));
+}
