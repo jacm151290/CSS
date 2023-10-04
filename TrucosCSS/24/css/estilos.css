@@ -1,4 +1,52 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  background: #111;
+}
+
+h1 {
+  text-align: center;
+  color: #eee;
+}
+
+.degradados {
+  width: 200px;
+  height: 350px;
+  border: 2px solid #ccc;
+  margin: auto;
+  /*
+  background: repeating-linear-gradient(
+                  45deg,
+                  #333 25%,
+                  #eee 25%,
+                  #eee 50%,
+                  #333 50%,
+                  #333 75%,
+                  #eee 75%,
+              ) 0 0 / 20px;*/
+  background: repeating-linear-gradient(45deg, #eee 0, #eee 10px, #333 10px, #333 20px);
+}
+
+.loader {
+  width: 500px;
+  height: 30px;
+  margin: auto;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  background: repeating-linear-gradient(-45deg, tomato 0, tomato 10px, #ff8670 10px, #ff8670 20px) 0/200%;
+  -webkit-animation: loader 10s linear infinite;
+          animation: loader 10s linear infinite;
+}
+
+@-webkit-keyframes loader {
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes loader {
+  100% {
+    background-position: 100% 0%;
+  }
 }

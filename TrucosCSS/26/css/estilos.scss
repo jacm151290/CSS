@@ -1,0 +1,175 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #111;
+}
+
+h1{
+    text-align: center;
+    color: #aaa;
+}
+
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+$html: 75;
+$css: 55;
+$javascript: 41;
+$angular: 50;
+$php: 90;
+$mysql: 35;
+
+.circular-progress{
+    $size1: 12rem;
+    $font-size: 2rem;
+    
+    &,
+    &::before,
+    &::after{
+        width: $size1;
+        height: $size1;
+        border-radius: 50%;
+    }
+
+    margin: auto;
+    /*background: linear-gradient(
+                    0deg,
+                    #fff 50%,
+                    rgba(#fff,.2) 50%
+                );*/
+    position: relative;
+    
+    &::before,
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+
+    &::before{
+        padding: calc($font-size / 2);
+        box-sizing: border-box;
+        
+        line-height: $size1 - calc( $font-size * 2 );
+    }
+
+    &::after{
+        font-size: $font-size;
+        line-height: $size1 + $font-size;//calc($font-size / 2);
+    }
+
+}
+
+@function progress($percent){
+    $deg: $percent/100 * 180;
+    @return $deg;
+}
+
+@mixin circular-progress($percent,$skill,$color,$bgcolor){
+    $progress: #{progress($percent)}deg;
+    transform: scale(1.01) rotate($progress);
+    background: linear-gradient(
+        0deg,
+        $color 50%,
+        rgba($color,.2) 50%
+    );
+
+    &::before,
+    &::after{
+        color: $color;
+    }
+
+    &::before{
+        content: "#{$percent}%";
+        background: $bgcolor content-box;
+        transform: scale(1.01) rotate(-#{$progress});
+    }
+
+    &::after{
+        content: to-upper-case($skill);
+        background: linear-gradient(
+            transparent 50%,
+            $bgcolor 50%
+        );
+        transform: scale(1.01) rotate(-#{$progress});
+    }
+}
+
+.html{
+    @include circular-progress($html, "HTML", orange, #111);
+}
+
+.css{
+    @include circular-progress($css, "CSS", blue, #111);
+}
+
+.javascript{
+    @include circular-progress($javascript, "javascript", green, #111);
+}
+
+.angular{
+    @include circular-progress($angular, "ANGULAR", red, #111);
+}
+
+.php{
+    @include circular-progress($php, "PHP", lighten(blue, 20), #111);
+}
+
+.mysql{
+    @include circular-progress($mysql, "MYSQL", lighten(orange, 20), #111);
+}
+
+/*
+.html{
+    transform: rotate(#{progress($html)}deg);
+}
+
+.html::before, .html::after{
+    transform: scale(1.01) rotate(-#{progress($html)}deg);
+}
+
+.html::before{
+    content: "HTML5";
+}
+
+.html::after{
+    content: "#{$html}%";
+}
+
+.css{
+    transform: rotate(#{progress($css)}deg);
+}
+
+.css::before, .css::after{
+    transform: scale(1.01) rotate(-#{progress($css)}deg);
+}
+
+.css::before{
+    content: "CSS";
+}
+
+.css::after{
+    content: "#{$css}%";
+}
+
+.javascript{
+    transform: rotate(#{progress($javascript)}deg);
+}
+
+.javascript::before, .javascript::after{
+    transform: scale(1.01) rotate(-#{progress($javascript)}deg);
+}
+
+.javascript::before{
+    content: "JS";
+}
+
+.javascript::after{
+    content: "#{$javascript}%";
+}*/
+
